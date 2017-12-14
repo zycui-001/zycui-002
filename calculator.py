@@ -2,8 +2,15 @@
 # --coding:utf-8
 
 import sys
+import os
 
 for arg in sys.argv[1: ]:
+    try:
+        pay_id = int(arg.split(":")[0])
+        pay = int(arg.split(":")[1])
+    except ValueError:
+        print("Parameter Error")
+        os.exit(0)
     # 工号
     pay_id = int(arg.split(":")[0])
     # 工资
